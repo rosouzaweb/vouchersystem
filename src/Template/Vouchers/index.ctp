@@ -4,16 +4,7 @@
  * @var \App\Model\Entity\Voucher[]|\Cake\Collection\CollectionInterface $vouchers
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Voucher'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Recipients'), ['controller' => 'Recipients', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Recipient'), ['controller' => 'Recipients', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Special Offers'), ['controller' => 'SpecialOffers', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Special Offer'), ['controller' => 'SpecialOffers', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+
 <div class="vouchers index large-9 medium-8 columns content">
     <h3><?= __('Vouchers') ?></h3>
     <table cellpadding="0" cellspacing="0">
@@ -26,7 +17,6 @@
                 <th scope="col"><?= $this->Paginator->sort('expiration_date') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('used') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('date_usage') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -39,11 +29,6 @@
                 <td><?= h($voucher->expiration_date) ?></td>
                 <td><?= h($voucher->used) ?></td>
                 <td><?= h($voucher->date_usage) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $voucher->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $voucher->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $voucher->id], ['confirm' => __('Are you sure you want to delete # {0}?', $voucher->id)]) ?>
-                </td>
             </tr>
             <?php endforeach; ?>
         </tbody>
